@@ -8,5 +8,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("http://localhost:4200")  // accept calls from web browser for this origin. Need for exclude an error of CORS policy
 @RepositoryRestResource(collectionResourceRel = "productCategory", path = "product-category") // collRes = json entry name, path - link of way product category
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
-
 }

@@ -16,5 +16,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Page<Product> findByCategoryId(@RequestParam("id") Long id, Pageable pageable); //behind this equals SELECT * FROM product where category_id=?
     // spring data rest loc:8080/api/products/searc/findByCategory?id=3 print all from category 3 in database
 
+    Page<Product> findByNameContaining(@RequestParam("name") String name, Pageable pageable); // Select * from Product p
+    // where p.name line concat ('%', :name, '%')
+    //http://localhost:8080/api/products/search/findByNameContaining?name=Data
 
 }

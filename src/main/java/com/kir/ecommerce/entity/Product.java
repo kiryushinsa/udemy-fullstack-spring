@@ -1,6 +1,8 @@
 package com.kir.ecommerce.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -43,9 +45,11 @@ public class Product {
     private int unitsInStock;
 
     @Column(name = "date_created")
+    @CreationTimestamp
     private Date dateCreated;
 
     @Column(name = "last_updated")
+    @UpdateTimestamp
     private Date lastUpdated;
 
 }
